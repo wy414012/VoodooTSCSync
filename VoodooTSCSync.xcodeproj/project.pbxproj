@@ -21,6 +21,8 @@
 		C1571F4620AF477D005FA482 /* VoodooTSCSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoodooTSCSync.h; path = Intel/VoodooTSCSync.h; sourceTree = "<group>"; };
 		C1571F5720AF49A3005FA482 /* VoodooTSCSyncAMD.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoodooTSCSyncAMD.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1571F5B20AF4C79005FA482 /* VoodooTSCSyncAMD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VoodooTSCSyncAMD.cpp; path = AMD/VoodooTSCSyncAMD.cpp; sourceTree = "<group>"; };
+		ED5E32662179747300E5EA50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Intel/Info.plist; sourceTree = "<group>"; };
+		ED5E32672179747C00E5EA50 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AMD/Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				C1571F4420AF477D005FA482 /* VoodooTSCSync.cpp */,
 				C1571F4620AF477D005FA482 /* VoodooTSCSync.h */,
+				ED5E32662179747300E5EA50 /* Info.plist */,
 			);
 			name = Intel;
 			sourceTree = "<group>";
@@ -75,6 +78,7 @@
 			children = (
 				C1571F5B20AF4C79005FA482 /* VoodooTSCSyncAMD.cpp */,
 				C1571F4020AF4773005FA482 /* VoodooTSCSyncAMD.h */,
+				ED5E32672179747C00E5EA50 /* Info.plist */,
 			);
 			name = AMD;
 			sourceTree = "<group>";
