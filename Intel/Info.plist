@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Source Code</key>
+	<string>https://github.com/RehabMan/VoodooTSCSync</string>
+	<key>CFBundleGetInfoString</key>
+	<string>${MODULE_VERSION}, Copyright © 2009 Cosmo1t, 2018 RehabMan. GPLv2.</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleGetInfoString</key>
-	<string>Copyright © 2009 Cosmo1t, 2018 RehabMan. GPLv2.</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>${MODULE_NAME}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -17,17 +21,19 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.0</string>
+	<string>${MODULE_VERSION}</string>
+	<key>CFBundleShortVersionString</key>
+	<string>${MODULE_VERSION}</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>VoodooTSCSync</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
-			<string>org.voodoo.driver.${PRODUCT_NAME:rfc1034Identifier}</string>
+			<string>${MODULE_NAME}</string>
 			<key>IOClass</key>
-			<string>${PRODUCT_NAME:rfc1034Identifier}</string>
+			<string>${PRODUCT_NAME}</string>
 			<key>IOMatchCategory</key>
-			<string>${PRODUCT_NAME:rfc1034Identifier}</string>
+			<string>${PRODUCT_NAME}</string>
 			<key>IOProviderClass</key>
 			<string>AppleACPICPU</string>
 		</dict>
