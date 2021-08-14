@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		796F4FC226C75DC300E8B90C /* libkmod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 796F4FC126C75DC300E8B90C /* libkmod.a */; };
 		C1571F4720AF477D005FA482 /* VoodooTSCSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1571F4420AF477D005FA482 /* VoodooTSCSync.cpp */; };
 		C1571F4920AF477D005FA482 /* VoodooTSCSync.h in Headers */ = {isa = PBXBuildFile; fileRef = C1571F4620AF477D005FA482 /* VoodooTSCSync.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32D94FD00562CBF700B6AF17 /* VoodooTSCSync.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoodooTSCSync.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		796F4FC126C75DC300E8B90C /* libkmod.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkmod.a; path = MacKernelSDK/Library/x86_64/libkmod.a; sourceTree = "<group>"; };
 		C1571F4420AF477D005FA482 /* VoodooTSCSync.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VoodooTSCSync.cpp; path = Intel/VoodooTSCSync.cpp; sourceTree = "<group>"; };
 		C1571F4620AF477D005FA482 /* VoodooTSCSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoodooTSCSync.h; path = Intel/VoodooTSCSync.h; sourceTree = "<group>"; };
 		ED5E32662179747300E5EA50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Intel/Info.plist; sourceTree = "<group>"; };
 		EDBBF044217A76DC0033FEDC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		EDBBF046217A76EE0033FEDC /* makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796F4FC226C75DC300E8B90C /* libkmod.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,9 +37,9 @@
 			isa = PBXGroup;
 			children = (
 				EDBBF044217A76DC0033FEDC /* README.md */,
-				EDBBF046217A76EE0033FEDC /* makefile */,
 				247142CAFF3F8F9811CA285C /* Intel */,
 				19C28FB6FE9D52B211CA2CBB /* Products */,
+				796F4FC026C75DC300E8B90C /* Frameworks */,
 			);
 			name = VoodooTSCSync;
 			sourceTree = "<group>";
@@ -58,6 +60,14 @@
 				ED5E32662179747300E5EA50 /* Info.plist */,
 			);
 			name = Intel;
+			sourceTree = "<group>";
+		};
+		796F4FC026C75DC300E8B90C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				796F4FC126C75DC300E8B90C /* libkmod.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +171,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Intel/Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MacKernelSDK/Library/x86_64",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.voodoo.driver.${PRODUCT_NAME:rfc1034Identifier}";
 				PRODUCT_NAME = VoodooTSCSync;
 				WRAPPER_EXTENSION = kext;
@@ -177,7 +191,11 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Intel/Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MacKernelSDK/Library/x86_64",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.voodoo.driver.${PRODUCT_NAME:rfc1034Identifier}";
 				PRODUCT_NAME = VoodooTSCSync;
 				WRAPPER_EXTENSION = kext;
@@ -187,6 +205,7 @@
 		1DEB91DE08733DB10010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = x86_64;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -219,7 +238,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
+				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				MODULE_NAME = org.rehabman.driver.VoodooTSCSync;
 				MODULE_VERSION = 1.5.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -232,6 +252,7 @@
 		1DEB91DF08733DB10010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = x86_64;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -259,7 +280,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
+				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				MODULE_NAME = org.rehabman.driver.VoodooTSCSync;
 				MODULE_VERSION = 1.5.0;
 				ONLY_ACTIVE_ARCH = NO;
